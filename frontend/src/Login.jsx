@@ -15,7 +15,11 @@ function Login() {
     const { email, password } = data;
     await axios
       .post("/login", { email, password })
-      .then((result) => userValidation(result))
+      .then((result) => {
+        userValidation(result);
+        window.location.reload();
+      })
+
       .catch((error) => {
         setError(error?.response?.data?.Error);
       });

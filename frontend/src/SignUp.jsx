@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "./axios";
 import { userValidation } from "./userValidation";
 import { useForm } from "react-hook-form";
 function SignUp() {
+  const d = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,8 +20,10 @@ function SignUp() {
           email,
           password,
         })
-        .then((result) => {
-          setError(userValidation(result));
+        .then(async (result) => {
+          await userValidation(result);
+          d("/");
+          window.location.reload();
         })
         .catch((err) => {
           setError(err.message);

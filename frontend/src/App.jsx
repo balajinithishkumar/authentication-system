@@ -2,6 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Home from "./Home";
@@ -54,7 +55,12 @@ function App() {
           </div>
         </div>
       ) : (
-        <Home />
+        <>
+          {console.log("ok")}
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+          </Routes>
+        </>
       )}
     </>
   );

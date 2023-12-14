@@ -1,7 +1,6 @@
 export function userValidation(user) {
   if (user.data?.Error) return user.data.Error;
   localStorage.setItem("user", JSON.stringify(user.data));
-  return window.location.reload();
 }
 
 export function logoutvalidation(user) {
