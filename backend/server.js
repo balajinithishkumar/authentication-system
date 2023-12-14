@@ -9,8 +9,6 @@ import cookieParser from "cookie-parser";
 import { finduser } from "./database.js";
 import { createToken } from "./createToken.js";
 import { verifyToken } from "./verifyToken.js";
-import path from "path";
-import { unsubscribe } from "diagnostics_channel";
 
 // modules inilitization
 const app = express();
@@ -62,13 +60,9 @@ app.post("/api/register", async (req, res) => {
     res.status(400).send({ Error: err });
   }
 });
-app.post("/api/test", (req, res) => {
-  res.send("ok");
-});
+
 app.get("/api/test", async (req, res) => {
-  const user = await usermodel.findOne({ email: "ok@gmail.com" });
-  res.send(String(user));
-  console.log(user);
+  res.send("okok");
 });
 app.post("/api/login", async (req, res) => {
   var { email, password } = req.body;
