@@ -39,7 +39,7 @@ function Login() {
             })}
           />
           <p style={{ color: "red", fontSize: "13px" }}>
-            {errors?.email && errors.Email.message}
+            {errors?.email && errors?.email?.message}
           </p>
         </div>
         <div className="">
@@ -53,7 +53,7 @@ function Login() {
             })}
           />
           <p style={{ color: "red", fontSize: "13px" }}>
-            {errors?.Password && errors.Password.message}
+            {errors?.password && errors?.password?.message}
           </p>
         </div>
         <div className="d-flex justify-content-end mb-4">
