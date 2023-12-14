@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://jwtauthentication-app-296648c5f35c.herokuapp.com/",
+  baseURL: "https://jwt-auth-app-770d.onrender.com/api",
 });
 
 export default instance;
